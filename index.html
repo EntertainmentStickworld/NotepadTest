@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .button{
+                background-color:orange;
+                color:white;
+                font-weight:bold;
+            }
+            .button:hover{
+                background-color:rgb(200,150,0);
+                color:white;
+                font-weight:bold;
+            }
+        </style>
+    </head>
+
+    <body style="font-family:arial">
+        <div id="startscreen" style="padding:20px;background-color:yellow;text-align:center;Display:block">
+            <h1>Welcome to the Notepad!</h1>
+            <h3>Write quickly and neatly</h3>
+            <hr>
+            <button onclick="disappear()" style="background-color:white">Open Notepad</button>
+            <br><br>
+        </div>
+        <script>
+            function disappear(){
+                document.getElementById("startscreen").style.display = "none"
+                document.getElementById("mainscreen").style.display = "block"
+            }
+
+        </script>
+
+        <div id="mainscreen" style="border:2px solid orange;Display:none;padding:10px">
+            <button onclick="boldify()" id="embold" class="button">Bold</button><button onclick="italify()" id="italicize" class="button">Italics</button><button onclick="underlineify()" id="underline" class="button">Underline</button><br><br>
+            <fieldset id="text" style="width:330px;height:200px;margin-left:5%" contenteditable="true"></fieldset>
+            <p id="textb"></p>
+            <script>
+                curbold = 0
+                curital = 0
+                curundr = 0
+                function boldify(){
+                    document.execCommand("bold");
+                }
+                function italify(){
+                    document.execCommand("italic");
+                }
+                function underlineify(){
+                    document.execCommand("underline");
+                }
+                
+            </script>
+
+        </div>
+    
+    </body>
+
+</html>
+
+
+    
